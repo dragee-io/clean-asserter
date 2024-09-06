@@ -2,11 +2,11 @@
   "dragees": [
     {
       "name": "APresenter",
-      "kind_of": "clean/presenter"
+      "profile": "clean/presenter"
     },
     {
       "name": "AUseCase",
-      "kind_of": "clean/use_case",
+      "profile": "clean/use_case",
       "depends_on": {
         "APresenter": [
           "field"

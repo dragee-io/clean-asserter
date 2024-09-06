@@ -2,7 +2,7 @@
   "dragees": [
     {
       "name": "APresenter",
-      "kind_of": "clean/presenter"
+      "profile": "clean/presenter"
     }
   ],
   "result": {

@@ -1,34 +1,34 @@
 import type { Dragee } from "@dragee-io/asserter-type";
 
-export const controllerKind = "clean/controller";
-export const presenterKind = "clean/presenter";
-export const useCaseKind = "clean/use_case";
+export const controllerProfile = "clean/controller";
+export const presenterProfile = "clean/presenter";
+export const useCaseProfile = "clean/use_case";
 
-const kindsName =
+const profilesName =
   [
-    controllerKind,
-    presenterKind,
-    useCaseKind
+    controllerProfile,
+    presenterProfile,
+    useCaseProfile
   ]; 
 
-export type Kind = typeof kindsName[number]
+export type Profile = typeof profilesName[number]
 
-type CleanKindChecks = {
-  [kind in Kind]: {
+type CleanProfileChecks = {
+  [profile in Profile]: {
    findIn: (dragees : Dragee[]) => Dragee[],
-   is:(kind : string) => boolean
+   is:(profile : string) => boolean
   }
 }
 
-export const kinds: CleanKindChecks = {} as CleanKindChecks;
+export const profiles: CleanProfileChecks = {} as CleanProfileChecks;
 
-kindsName.map(kind => {
-  kinds[kind] = {
-    is: (value: string) => value === kind,
-    findIn: (dragees: Dragee[]) => dragees.filter(dragee => dragee.kind_of === kind)
+profilesName.map(profile => {
+  profiles[profile] = {
+    is: (value: string) => value === profile,
+    findIn: (dragees: Dragee[]) => dragees.filter(dragee => dragee.profile === profile)
   }
-  return kinds[kind];
+  return profiles[profile];
 })
 
-export const kindOf = (dragee: Dragee, ...kindsFilter: Kind[]): boolean => 
-  kindsFilter.map(kf => kinds[kf].is(dragee.kind_of)).some(b => b)
+export const profileOf = (dragee: Dragee, ...profilesFilter: Profile[]): boolean => 
+  profilesFilter.map(kf => profiles[kf].is(dragee.profile)).some(b => b)

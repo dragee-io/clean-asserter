@@ -2,7 +2,7 @@
   "dragees": [
     {
       "name": "AController",
-      "kind_of": "clean/controller"
+      "profile": "clean/controller"
     }
   ],
   "result": {
