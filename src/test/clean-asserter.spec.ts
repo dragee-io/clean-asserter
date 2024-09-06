@@ -51,9 +51,17 @@ describe('Clean Asserter', () => {
     
     describe('Controller Rules', () => {
         const CONTROLLER_MANDATORY_DEPENDENCIES_TEST_DIRECTORY = './clean/controller-mandatory-dependencies/';
-        describe('An controller must at least contains one use case', () => {
+        describe('A controller must at least contain one use case', () => {
             rulePassed(CONTROLLER_MANDATORY_DEPENDENCIES_TEST_DIRECTORY + '/rule-passed.json');
             ruleFailed(CONTROLLER_MANDATORY_DEPENDENCIES_TEST_DIRECTORY + '/rule-failed.json');
+        })
+    });
+    
+    describe('Presenter Rules', () => {
+        const PRESENTER_MANDATORY_DEPENDENCIES_TEST_DIRECTORY = './clean/presenter-mandatory-dependencies/';
+        describe('A presenter must at least contain one use case', () => {
+            rulePassed(PRESENTER_MANDATORY_DEPENDENCIES_TEST_DIRECTORY + '/rule-passed.json');
+            ruleFailed(PRESENTER_MANDATORY_DEPENDENCIES_TEST_DIRECTORY + '/rule-failed.json');
         })
     });
 })

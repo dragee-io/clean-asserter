@@ -1,0 +1,33 @@
+{
+  "dragees": [
+    {
+      "name": "APresenter",
+      "kind_of": "clean/presenter",
+      "depends_on": {
+        "AUseCase1": [
+          "field"
+        ]
+      }
+    },
+    {
+      "name": "AController",
+      "kind_of": "clean/controller",
+      "depends_on": {
+        "AUseCase2": [
+          "field"
+        ]
+      }
+    },
+    {
+      "name": "AUseCase1",
+      "kind_of": "clean/use_case"
+    },
+    {
+      "name": "AUseCase2",
+      "kind_of": "clean/use_case"
+    }
+  ],
+  "result": {
+    "pass": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "dragees": [
+    {
+      "name": "APresenter",
+      "kind_of": "clean/presenter"
+    }
+  ],
+  "result": {
+    "pass": false,
+    "errors": [
+      "The presenter \"APresenter\" must at least contain a \"clean/use_case\" type dragee"
+    ]
+  }
+}
