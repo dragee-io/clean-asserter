@@ -1,0 +1,14 @@
+{
+  "dragees": [
+    {
+      "name": "AController",
+      "kind_of": "clean/controller"
+    }
+  ],
+  "result": {
+    "pass": false,
+    "errors": [
+      "The controller \"AController\" must at least contain a \"clean/use_case\" type dragee"
+    ]
+  }
+}

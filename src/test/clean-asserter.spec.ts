@@ -43,10 +43,17 @@ describe('Clean Asserter', () => {
     
     describe('Use Case Rules', () => {
         const USE_CASE_ALLOWED_DEPENDENCIES_TEST_DIRECTORY = './clean/use-case-allowed-dependencies/';
-
         describe('A use case must not have any dependency of type Controller/Presenter', () => {
             rulePassed(USE_CASE_ALLOWED_DEPENDENCIES_TEST_DIRECTORY + '/rule-passed.json');
             ruleFailed(USE_CASE_ALLOWED_DEPENDENCIES_TEST_DIRECTORY + '/rule-failed.json');
+        })
+    });
+    
+    describe('Controller Rules', () => {
+        const CONTROLLER_MANDATORY_DEPENDENCIES_TEST_DIRECTORY = './clean/controller-mandatory-dependencies/';
+        describe('An controller must at least contains one use case', () => {
+            rulePassed(CONTROLLER_MANDATORY_DEPENDENCIES_TEST_DIRECTORY + '/rule-passed.json');
+            ruleFailed(CONTROLLER_MANDATORY_DEPENDENCIES_TEST_DIRECTORY + '/rule-failed.json');
         })
     });
 })
