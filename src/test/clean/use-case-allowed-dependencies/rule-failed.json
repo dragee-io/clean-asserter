@@ -1,0 +1,23 @@
+{
+  "dragees": [
+    {
+      "name": "APresenter",
+      "kind_of": "clean/presenter"
+    },
+    {
+      "name": "AUseCase",
+      "kind_of": "clean/use_case",
+      "depends_on": {
+        "APresenter": [
+          "field"
+        ]
+      }
+    }
+  ],
+  "result": {
+    "pass": false,
+    "errors": [
+      "The use case \"AUseCase\" must not have any dependency of type \"clean/presenter\""
+    ]
+  }
+}
