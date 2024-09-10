@@ -17,7 +17,10 @@
   "result": {
     "pass": false,
     "errors": [
-      "The use case \"AUseCase\" must not have any dependency of type \"clean/presenter\""
+      {
+        "drageeName": "AUseCase",
+        "message": "The use case \"AUseCase\" must not have any dependency of type \"clean/presenter\""
+      }
     ]
   }
 }

@@ -8,7 +8,10 @@
   "result": {
     "pass": false,
     "errors": [
-      "The controller \"AController\" must at least contain a \"clean/use_case\" type dragee"
+      {
+        "drageeName": "AController",
+        "message": "The controller \"AController\" must at least contain a \"clean/use_case\" type dragee"
+      }
     ]
   }
 }
