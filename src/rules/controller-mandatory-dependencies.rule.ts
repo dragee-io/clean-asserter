@@ -3,7 +3,7 @@ import { CleanRule } from '../clean-rule.model.ts';
 import { profiles, controllerProfile, useCaseProfile } from "../clean.model.ts";
 
 const assertDrageeDependency = ({root, dependencies}: DrageeDependency): RuleResult =>
-    expectDragees(root, dependencies, `The controller "${root.name}" must at least contain a "clean/use_case" type dragee`, 
+    expectDragees(root, dependencies, `This controller must at least contain a "clean/use_case" type dragee`, 
         (dependencies) => !!profiles[useCaseProfile].findIn(dependencies).length
     )
 

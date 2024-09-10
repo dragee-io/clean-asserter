@@ -19,7 +19,7 @@
     "errors": [
       {
         "drageeName": "AUseCase",
-        "message": "The use case \"AUseCase\" must not have any dependency of type \"clean/presenter\""
+        "message": "This use case must not have any dependency of type \"clean/presenter\""
       }
     ]
   }

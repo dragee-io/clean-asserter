@@ -4,7 +4,7 @@ import { profiles, profileOf, useCaseProfile, controllerProfile, presenterProfil
 
 const assertDrageeDependency = ({root, dependencies}: DrageeDependency): RuleResult[] => 
     dependencies.map(dependency => 
-        expectDragee(root, dependency, `The use case "${root.name}" must not have any dependency of type "${dependency.profile}"`, 
+        expectDragee(root, dependency, `This use case must not have any dependency of type "${dependency.profile}"`, 
             (dragee) => !profileOf(dragee, controllerProfile, presenterProfile)
         )
     );
