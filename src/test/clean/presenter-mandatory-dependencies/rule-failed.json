@@ -10,7 +10,8 @@
     "errors": [
       {
         "drageeName": "APresenter",
-        "message": "This presenter must at least contain a \"clean/use_case\" type dragee"
+        "message": "This presenter must at least contain a \"clean/use_case\" type dragee",
+        "ruleId": "clean/presenter-mandatory-dependencies"
       }
     ]
   }

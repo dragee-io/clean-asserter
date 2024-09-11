@@ -19,7 +19,8 @@
     "errors": [
       {
         "drageeName": "AUseCase",
-        "message": "This use case must not have any dependency of type \"clean/presenter\""
+        "message": "This use case must not have any dependency of type \"clean/presenter\"",
+        "ruleId": "clean/use-case-allowed-dependencies"
       }
     ]
   }

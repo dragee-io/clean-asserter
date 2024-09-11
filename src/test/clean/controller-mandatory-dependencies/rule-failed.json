@@ -10,7 +10,8 @@
     "errors": [
       {
         "drageeName": "AController",
-        "message": "This controller must at least contain a \"clean/use_case\" type dragee"
+        "message": "This controller must at least contain a \"clean/use_case\" type dragee",
+        "ruleId": "clean/controller-mandatory-dependencies"
       }
     ]
   }
