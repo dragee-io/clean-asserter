@@ -22,4 +22,8 @@ To run tests:
 bun test
 ```
 
-[Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+To generate documentation
+
+```bash
+bun typedoc
+```
