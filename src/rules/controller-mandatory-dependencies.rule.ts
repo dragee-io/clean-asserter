@@ -1,3 +1,38 @@
+/**
+ * **controller-mandatory-dependencies :**
+ * Controllers must at least contain a "clean/use_case" type dragee
+ * 
+ * ## Examples
+ * 
+ * Example of incorrect dragees for this rule: 
+ * 
+ * ```json
+ * {
+ *     "name": "AController",
+ *     "profile": "clean/controller"
+ * }
+ * ```
+ * Example of correct dragees for this rule: 
+ * 
+ * ```json
+ * {
+ *     "name": "AController",
+ *     "profile": "clean/controller",
+ *     "depends_on": {
+ *         "AUseCase1": [
+ *             "field"
+ *         ]
+ *     }
+ * },
+ * {
+ *     "name": "AUseCase1",
+ *     "profile": "clean/use_case"
+ * }
+ * ```
+ * 
+ * @module Controller Mandatory Dependencies
+ * 
+ */
 import { type Dragee, type RuleResult, expectDragees, directDependencies, type DrageeDependency, RuleSeverity } from "@dragee-io/asserter-type";
 import { CleanRule } from '../clean-rule.model.ts';
 import { profiles, controllerProfile, useCaseProfile } from "../clean.model.ts";
