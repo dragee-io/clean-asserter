@@ -1,3 +1,6 @@
-import { CleanAsserter } from './src/clean-asserter.model.ts';
+import { findRules } from '@dragee-io/asserter-type';
 
-export default new CleanAsserter();
+export default {
+    namespace: 'clean',
+    rules: findRules('clean', `${import.meta.dir}/src/rules/`)
+};
