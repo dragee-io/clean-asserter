@@ -48,7 +48,8 @@
  * @module Use Case Allowed Dependencies
  * 
  */
-import { type Dragee, type RuleResult, expectDragee, directDependencies, type DrageeDependency, RuleSeverity } from "@dragee-io/asserter-type";
+import { type RuleResult, expectDragee, directDependencies, RuleSeverity } from "@dragee-io/type/asserter";
+import type { Dragee, DrageeDependency } from "@dragee-io/type/common";
 import { profiles, profileOf, useCaseProfile, controllerProfile, presenterProfile } from "../clean.model.ts";
 
 const assertDrageeDependency = ({root, dependencies}: DrageeDependency): RuleResult[] => 
