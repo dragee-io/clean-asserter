@@ -22,12 +22,11 @@ type CleanProfileChecks = {
 
 export const profiles: CleanProfileChecks = {} as CleanProfileChecks;
 
-profilesName.map(profile => {
+profilesName.forEach(profile => {
   profiles[profile] = {
     is: (value: string) => value === profile,
     findIn: (dragees: Dragee[]) => dragees.filter(dragee => dragee.profile === profile)
   }
-  return profiles[profile];
 })
 
 export const profileOf = (dragee: Dragee, ...profilesFilter: Profile[]): boolean => 
