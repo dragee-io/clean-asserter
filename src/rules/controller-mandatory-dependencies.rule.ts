@@ -1,19 +1,19 @@
 /**
  * **controller-mandatory-dependencies :**
  * Controllers must at least contain a "clean/use_case" type dragee
- * 
+ *
  * ## Examples
- * 
- * Example of incorrect dragees for this rule: 
- * 
+ *
+ * Example of incorrect dragees for this rule:
+ *
  * ```json
  * {
  *     "name": "AController",
  *     "profile": "clean/controller"
  * }
  * ```
- * Example of correct dragees for this rule: 
- * 
+ * Example of correct dragees for this rule:
+ *
  * ```json
  * {
  *     "name": "AController",
@@ -29,25 +29,34 @@
  *     "profile": "clean/use_case"
  * }
  * ```
- * 
+ *
  * @module Controller Mandatory Dependencies
- * 
+ *
  */
-import { type RuleResult, expectDragees, directDependencies, RuleSeverity } from "@dragee-io/type/asserter";
-import type { Dragee, DrageeDependency } from "@dragee-io/type/common";
-import { profiles, controllerProfile, useCaseProfile } from "../clean.model.ts";
+import {
+    type RuleResult,
+    RuleSeverity,
+    directDependencies,
+    expectDragees
+} from '@dragee-io/type/asserter';
+import type { Dragee, DrageeDependency } from '@dragee-io/type/common';
+import { controllerProfile, profiles, useCaseProfile } from '../clean.model.ts';
 
-const assertDrageeDependency = ({root, dependencies}: DrageeDependency): RuleResult =>
-    expectDragees(root, dependencies, `This controller must at least contain a "clean/use_case" type dragee`, 
-        (dependencies) => !!profiles[useCaseProfile].findIn(dependencies).length
-    )
+const assertDrageeDependency = ({ root, dependencies }: DrageeDependency): RuleResult =>
+    expectDragees(
+        root,
+        dependencies,
+        `This controller must at least contain a "clean/use_case" type dragee`,
+        dependencies => !!profiles[useCaseProfile].findIn(dependencies).length
+    );
 
 export default {
     label: 'Controller Mandatory Dependencies',
     severity: RuleSeverity.ERROR,
     handler: (dragees: Dragee[]): RuleResult[] =>
-        profiles[controllerProfile].findIn(dragees)
+        profiles[controllerProfile]
+            .findIn(dragees)
             .map(useCase => directDependencies(useCase, dragees))
             .filter(dep => dep.dependencies)
-            .map(dep => assertDrageeDependency(dep))
-            .flatMap(result => result)};
+            .flatMap(dep => assertDrageeDependency(dep))
+};
