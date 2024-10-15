@@ -1,18 +1,18 @@
 {
-  "dragees": [
-    {
-      "name": "AController",
-      "profile": "clean/controller"
+    "dragees": [
+        {
+            "name": "AController",
+            "profile": "clean/controller"
+        }
+    ],
+    "result": {
+        "pass": false,
+        "errors": [
+            {
+                "drageeName": "AController",
+                "message": "This controller must at least contain a \"clean/use_case\" type dragee",
+                "ruleId": "clean/controller-mandatory-dependencies"
+            }
+        ]
     }
-  ],
-  "result": {
-    "pass": false,
-    "errors": [
-      {
-        "drageeName": "AController",
-        "message": "This controller must at least contain a \"clean/use_case\" type dragee",
-        "ruleId": "clean/controller-mandatory-dependencies"
-      }
-    ]
-  }
 }

@@ -1,18 +1,18 @@
 {
-  "dragees": [
-    {
-      "name": "APresenter",
-      "profile": "clean/presenter"
+    "dragees": [
+        {
+            "name": "APresenter",
+            "profile": "clean/presenter"
+        }
+    ],
+    "result": {
+        "pass": false,
+        "errors": [
+            {
+                "drageeName": "APresenter",
+                "message": "This presenter must at least contain a \"clean/use_case\" type dragee",
+                "ruleId": "clean/presenter-mandatory-dependencies"
+            }
+        ]
     }
-  ],
-  "result": {
-    "pass": false,
-    "errors": [
-      {
-        "drageeName": "APresenter",
-        "message": "This presenter must at least contain a \"clean/use_case\" type dragee",
-        "ruleId": "clean/presenter-mandatory-dependencies"
-      }
-    ]
-  }
 }

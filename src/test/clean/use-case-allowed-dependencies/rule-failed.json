@@ -1,27 +1,25 @@
 {
-  "dragees": [
-    {
-      "name": "APresenter",
-      "profile": "clean/presenter"
-    },
-    {
-      "name": "AUseCase",
-      "profile": "clean/use_case",
-      "depends_on": {
-        "APresenter": [
-          "field"
+    "dragees": [
+        {
+            "name": "APresenter",
+            "profile": "clean/presenter"
+        },
+        {
+            "name": "AUseCase",
+            "profile": "clean/use_case",
+            "depends_on": {
+                "APresenter": ["field"]
+            }
+        }
+    ],
+    "result": {
+        "pass": false,
+        "errors": [
+            {
+                "drageeName": "AUseCase",
+                "message": "This use case must not have any dependency of type \"clean/presenter\"",
+                "ruleId": "clean/use-case-allowed-dependencies"
+            }
         ]
-      }
     }
-  ],
-  "result": {
-    "pass": false,
-    "errors": [
-      {
-        "drageeName": "AUseCase",
-        "message": "This use case must not have any dependency of type \"clean/presenter\"",
-        "ruleId": "clean/use-case-allowed-dependencies"
-      }
-    ]
-  }
 }
