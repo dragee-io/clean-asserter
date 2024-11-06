@@ -4,7 +4,7 @@ export const controllerProfile = 'clean/controller';
 export const presenterProfile = 'clean/presenter';
 export const useCaseProfile = 'clean/use_case';
 
-const profilesName = [controllerProfile, presenterProfile, useCaseProfile];
+const profilesName = [controllerProfile, presenterProfile, useCaseProfile] as const;
 
 export type Profile = (typeof profilesName)[number];
 
